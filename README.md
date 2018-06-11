@@ -1,6 +1,14 @@
 # CE_Movie
 This is a CE platform including app and website
 
+## 提交及更新说明
+```
+1. git pull,获取当前git库信息
+2. git add . 
+3. git commit -m "description"
+4. git push origin master, Done!
+```
+
 ## 需求分析
 
 ## 前端开发
