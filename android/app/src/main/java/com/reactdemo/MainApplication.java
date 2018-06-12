@@ -1,4 +1,4 @@
-package com.ceapp;
+package com.reactdemo;
 
 import android.app.Application;
 

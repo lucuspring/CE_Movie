@@ -1,4 +1,4 @@
-package com.ceapp;
+package com.reactdemo;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "ceApp";
+        return "reactDemo";
     }
 }
