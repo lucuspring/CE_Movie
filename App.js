@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import TestComponent from './components/testComponent'
-
+import List from './components/GridComponent'
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -107,7 +107,8 @@ export default class App extends Component{
                         renderSelectedIcon={() =>  
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'trending'})}  
-                    >   
+                        >
+                        <TestComponent/>   
                     </TabNavigator.Item>  
   
                     <TabNavigator.Item  
@@ -119,7 +120,7 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'favorite'})}  
                     >  
-                         
+                         <List/> 
                     </TabNavigator.Item>  
   
                     <TabNavigator.Item  
@@ -131,7 +132,7 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'my'})}  
                     >  
-                       
+                       <TestComponent/> 
                     </TabNavigator.Item>  
                 </TabNavigator>  
             </View>   

@@ -9,6 +9,7 @@ import {
   ScrollView
 } from 'react-native';
 import {get} from '../config/request'
+import List from './GridComponent'
 
 
 const PlaceHolder1 = (props: any) => (
@@ -67,19 +68,20 @@ const GridDemo = (props:any)=>(
           data={data}
           columnNum={3}
           hasLine={false}
-          itemStyle={{ height: 100}}
+          itemStyle={{ height: 200,width:200}}
         />
       </ScrollView>
 );
 
 
 const Content = (props: any) => (
+//const showCard = this.state.scriptData.length?;
     <Card>
 	    <Card.Header
 	      title="黄宝金"
 	      thumbStyle={{ width: 30, height: 30 }}
 	      thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
-	      extra="剧本的未来"
+	      extra="fdfa"
 	    />
 	    <Card.Body>
 	      <View style={{ height: 42 }}>
@@ -129,11 +131,11 @@ onselectedIndexChange(index: number) {
         </WingBlank>
         <WhiteSpace size="lg" />
         <WingBlank size="md">
-         <GridDemo/>
+         <List/>
         </WingBlank>
         <WhiteSpace size="lg" />
         <WingBlank size="md">
-          <Content />
+          {ShowPlaceHolder2}
         </WingBlank>
       </View>
     );
