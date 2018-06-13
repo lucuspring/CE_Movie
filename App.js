@@ -14,9 +14,13 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import TestComponent from './components/testComponent'
+<<<<<<< HEAD
 import TaskComponent from './components/TaskComponent'
 import TaskDetail from './components/TaskDetail';
 
+=======
+import List from './components/GridComponent'
+>>>>>>> 0f13e0f38462a966489a1dfeb7530f67a7c57d74
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
