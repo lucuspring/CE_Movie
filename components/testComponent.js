@@ -136,6 +136,7 @@ onselectedIndexChange(index: number) {
         <WhiteSpace size="lg" />
         <WingBlank size="md">
           {ShowPlaceHolder2}
+          {this.state.scriptData[0].scriptName}
         </WingBlank>
       </View>
     );
