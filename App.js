@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import TestComponent from './components/testComponent'
+import TaskComponent from './components/TaskComponent'
+import TaskDetail from './components/TaskDetail';
 
 
 const instructions = Platform.select({
@@ -23,45 +25,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>
-//           Huangbaojin
-//           Welcome to React Native!
-//         </Text>
-//         <Text style={styles.instructions}>
-//           To get started, edit App.js
-//         </Text>
-//         <Text style={styles.instructions}>
-//           {instructions}
-//         </Text>
-//       </View>
-//     );
-//   }
-// }
+// type Props = {};
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// });
-//   
 const styles=StyleSheet.create({  
     container:{  
         flex:1  
@@ -101,14 +66,14 @@ export default class App extends Component{
   
                     <TabNavigator.Item  
                         selected={this.state.selectedTab==='trending'}  
-                        title="趋势"  
+                        title="任务"  
                         selectedTitleStyle={{color:'#63B8FF'}}  
                         renderIcon={()=><Image style={styles.icon} source={require('./res/images/ic_me.png')} />}  
                         renderSelectedIcon={() =>  
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'trending'})}  
                     >   
-                    </TabNavigator.Item>  
+                    </TabNavigator.Item>
   
                     <TabNavigator.Item  
                         selected={this.state.selectedTab==='favorite'}  
@@ -119,7 +84,6 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'favorite'})}  
                     >  
-                         
                     </TabNavigator.Item>  
   
                     <TabNavigator.Item  
@@ -131,7 +95,6 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'my'})}  
                     >  
-                       
                     </TabNavigator.Item>  
                 </TabNavigator>  
             </View>   

@@ -7,11 +7,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "antd": "^3.6.2",
     "antd-mobile": "^2.1.11",
     "antd-mobile-rn": "^2.2.0-beta.1",
     "fetch": "^1.1.0",
     "react": "16.3.1",
     "react-native": "0.55.4",
+    "react-native-elements": "^0.19.1",
     "react-native-tab-navigator": "^0.3.4",
     "react-native-vector-icons": "^4.6.0"
   },
