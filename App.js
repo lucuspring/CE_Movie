@@ -18,6 +18,7 @@ import React, { Component } from 'react';
  import Login from './components/Login';
  import Index from './components/Index';
  import Detail from './components/Detail';
+ import TaskDetail from './components/TaskDetail';
  
  export default class NV extends Component {
    //组件初始渲染执行完毕后调用
@@ -74,6 +75,8 @@ import React, { Component } from 'react';
          return <Index navigator={navigator} />
       case "Detail":
          return <Detail {...route.params} navigator={navigator} />
+      case "TaskDetail":
+         return <TaskDetail {...route.params} navigator={navigator} />
      }
    }
  }

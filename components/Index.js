@@ -83,7 +83,7 @@ export default class Index extends Component{
                         onPress={()=>this.setState({selectedTab:'trending'})}  
                         >
                         <ScrollView>
-                       <TaskList/>   
+                       <TaskList navigator={this.props.navigator}/>   
                        </ScrollView>
 
                     </TabNavigator.Item>  

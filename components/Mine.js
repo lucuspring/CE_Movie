@@ -7,6 +7,7 @@ import List from './GridComponent'
 import Detail from './Detail'
 import TaskList from './TaskList'
 import MessageList from './MessageList'
+import MyTeam from './MyTeam'
 
 export default class Mine extends React.Component {
   render() {
@@ -28,7 +29,7 @@ export default class Mine extends React.Component {
       <View style={{ flex: 1 }}>
         <Tabs tabs={tabs} initialPage={1}>
           <View>
-            <Detail/>
+            <MyTeam/>
           </View>
           <View >
             <List/>

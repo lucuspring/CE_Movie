@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   View,
+  TouchableOpacity
 } from 'react-native';
 import {get} from '../config/request'
 const Item = List.Item;
@@ -29,10 +30,24 @@ export default class TaskList extends Component{
          
     } 
 
+    press=(data)=>{
+      this.props.navigator.push({
+        name:'TaskDetail',
+        params: { 
+          taskTitle:data.title,
+           taskImg:data.image,
+           taskIdea:data.idea,
+          taskMoney:data.money,
+          taskDeadline:data.deadline,
+        }   
+      }); 
+      }
+
     render(){
       const showList = this.state.taskList.length?
       this.state.taskList.map((item,index)=>(
         <WingBlank key={index} size="lg">
+        <TouchableOpacity onPress={this.press.bind(this,item)}>
           <Card>
               <Card.Header
               title={item.title}
@@ -47,6 +62,7 @@ export default class TaskList extends Component{
               </Card.Body>
               <Card.Footer extra="详情->"/>
           </Card>
+          </TouchableOpacity>
         </WingBlank>
       )):null;
       return (
