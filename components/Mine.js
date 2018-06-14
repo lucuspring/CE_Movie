@@ -8,6 +8,7 @@ import Detail from './Detail'
 import TaskList from './TaskList'
 import MessageList from './MessageList'
 import MyTeam from './MyTeam'
+import MyScript from './MyScript'
 
 export default class Mine extends React.Component {
   render() {
@@ -32,7 +33,7 @@ export default class Mine extends React.Component {
             <MyTeam/>
           </View>
           <View >
-            <List/>
+            <MyScript navigator={this.props.navigator}/>
           </View>
           <View>
             <MessageList/>

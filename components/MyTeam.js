@@ -46,53 +46,37 @@ export default class MyTeam extends Component{
 }
 
 
-   render() {
-     var data =this.state.team;
-     var list = [];
-     //let tail= data.length- data.length % 3;
-     for(var i in data ){
-       if(i % 1 === 0){
-         var row = (
-           <Flex key={i} style={styles.row} justify='around'>
-             <Item 
-               url={data[i].teamImg}
-               title={data[i].teamName}
-              //  brief={data[i].teamId}
-               ></Item>
-             {/* <Item
-               url={data[parseInt(i)+1].teamImg}
-               title={data[parseInt(i)+1].teamName}
-               brief={data[parseInt(i)+1].teamId}
-              ></Item>
-           <Item
-               url={data[parseInt(i)+2].teamImg}
-               title={data[parseInt(i)+2].teamName}
-               brief={data[parseInt(i)+2].teamId}
-              ></Item> */}
-           </Flex>);
-         list.push(row);
-       }
-       
-     }
- 
-     return (
-         <ScrollView style={{marginTop:20}}>
+render() {
+  var data =this.state.team;
+  var list = [];
+
+  for(var i in data){
+    var item=(
+         <Item 
+            key={i}
+            url={data[i].teamImg}
+            title={data[i].teamName}
+            ></Item>
+    );
+    list.push(item);
+  }
+  return (
+      <ScrollView style={{marginTop:20}}>
+        <Flex wrap='wrap'>
            {list}
-         </ScrollView>
-     );
-   }
+        </Flex>   
+      </ScrollView>
+  );
+}
 } 
 
 const styles = StyleSheet.create({
-  
-  row:{ 
-    marginBottom: 10,
-  },
-  item:{  
-    borderWidth:1,
-    borderColor:'#ddd',
-    margin:5, 
-    width:'30%',
-  },
+
+item:{  
+ borderWidth:1,
+ borderColor:'#ddd',
+ margin:5, 
+ width:'30%',
+},
 
 });

@@ -98,7 +98,7 @@ export default class Index extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('../res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'my'})}  
                     >  
-                       <Mine/> 
+                       <Mine navigator={this.props.navigator}/> 
                     </TabNavigator.Item>  
                 </TabNavigator>  
             </View>   
