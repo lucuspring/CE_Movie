@@ -21,9 +21,13 @@ import TaskDetail from './components/TaskDetail';
 =======
 import List from './components/GridComponent'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import PersonComponent from './components/PersonPage'
 import Mine from './components/Mine'
 import Login from './components/Login'
+=======
+>>>>>>> 0f13e0f38462a966489a1dfeb7530f67a7c57d74
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 =======
 >>>>>>> 0f13e0f38462a966489a1dfeb7530f67a7c57d74
 >>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
@@ -84,10 +88,15 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'trending'})}  
 <<<<<<< HEAD
+<<<<<<< HEAD
                         >
                        <PersonComponent/>   
 
                     </TabNavigator.Item>  
+=======
+                    >   
+                    </TabNavigator.Item>
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 =======
                     >   
                     </TabNavigator.Item>
@@ -103,7 +112,10 @@ export default class App extends Component{
                         onPress={()=>this.setState({selectedTab:'favorite'})}  
                     >  
 <<<<<<< HEAD
+<<<<<<< HEAD
                          <Login/> 
+=======
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 =======
 >>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
                     </TabNavigator.Item>  
@@ -118,7 +130,10 @@ export default class App extends Component{
                         onPress={()=>this.setState({selectedTab:'my'})}  
                     >  
 <<<<<<< HEAD
+<<<<<<< HEAD
                        <Mine/> 
+=======
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 =======
 >>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
                     </TabNavigator.Item>  

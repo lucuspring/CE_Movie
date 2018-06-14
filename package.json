@@ -8,7 +8,11 @@
   },
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@stablelib/base64": "^0.7.2",
+=======
+    "antd": "^3.6.2",
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 =======
     "antd": "^3.6.2",
 >>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
@@ -21,7 +25,11 @@
     "react": "16.3.1",
     "react-native": "0.55.4",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "react-native-storage": "^0.2.2",
+=======
+    "react-native-elements": "^0.19.1",
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 =======
     "react-native-elements": "^0.19.1",
 >>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
