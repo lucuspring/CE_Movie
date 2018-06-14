@@ -44,18 +44,17 @@ const PlaceHolder1 = (props: any) => (
       </View>
 );
 
-componentWillMount=()=>{
-    let doit = this;
-    fetch('http://206.189.170.143:8081/scripts/preference')
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
-        doit.setState({
-          scriptData:myJson.data,
-        })
-      });
-  }
+
+
+// componentWillMount=()=>{
+//     let doit = this;
+//     get('/scripts/preference')
+//       .then((jsonData)=> {
+//         doit.setState({
+//           scriptData:myJson.data,
+//         })
+//       });
+//   }
 
 const data = Array.from(new Array(9)).map((_val, i) => ({
   icon: 'http://206.189.170.143:8081/scriptImg/1e652f6f-2f64-24b1-9ed3-f63e6856b978.jpg',
@@ -95,6 +94,7 @@ const Content = (props: any) => (
 	 </Card>
 );
 
+
 export default class TestComponent extends Component {
 	constructor(props){
 		super(props);
@@ -104,6 +104,8 @@ export default class TestComponent extends Component {
 		    scriptData:[],
 		}
 	}
+
+
 onselectedIndexChange(index: number) {
     /* tslint:disable: no-console */
     console.log('change to', index);
@@ -136,7 +138,6 @@ onselectedIndexChange(index: number) {
         <WhiteSpace size="lg" />
         <WingBlank size="md">
           {ShowPlaceHolder2}
-    
         </WingBlank>
       </View>
     );

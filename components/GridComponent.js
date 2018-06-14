@@ -9,34 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
- 
-//商品数据集合
-var Goods = [
-  {
-    title: '空气净化器',
-    url: 'http://img.muji.com.cn/img/item/4547315820665_400.jpg'
-  },
-  {
-    title: '棉不均匀染色开衫',
-    url: 'http://img.muji.com.cn/img/item/4549738656746_400.jpg'
-  },
-  {
-    title: '硅胶球形制冰器',
-    url: 'http://img.muji.com.cn/img/item/4549738306771_400.jpg'
-  },
-  {
-    title: '组合柜',
-    url: 'http://img.muji.com.cn/img/item/4549337263215_400.jpg'
-  },
-  {
-    title: '牛奶巧克力',
-    url: 'http://img.muji.com.cn/img/item/4549738664512_400.jpg'
-  },
-  {
-    title: '棉法兰绒被套 ',
-    url: 'http://img.muji.com.cn/img/item/4549738391210_400.jpg'
-  }
-]
+ import {get} from '../config/request';
  
 //单元格组件
 class Item extends Component {
@@ -56,25 +29,41 @@ class Item extends Component {
  
 //列表组件
 export default class List extends Component {
-   render() {
-    let doit = this;
 
-     var data = Goods;
+constructor(){
+    super();
+    this.state={
+      scriptData:[]
+    }
+  }
+
+componentDidMount(){
+    get('/scripts/preference')
+       .then((jsonData)=> {
+         this.setState({
+           scriptData:jsonData.data,
+        })
+       });
+   }
+
+
+   render() {
+     var data =this.state.scriptData;
      var list = [];
      for(var i in data){
        if(i % 3 === 0){
          var row = (
            <View key={i} style={styles.row}>
-             <Item url={data[i].url}
-               title={data[i].title}
+             <Item url={data[i].scriptPicture}
+               title={data[i].scriptName}
                press={this.press.bind(this, data[i])}></Item>
              <Item
-               url={data[parseInt(i)+1].url}
-               title={data[parseInt(i)+1].title}
+               url={data[parseInt(i)+1].scriptPicture}
+               title={data[parseInt(i)+1].scriptName}
                press={this.press.bind(this,  data[parseInt(i)+1])}></Item>
            <Item
-               url={data[parseInt(i)+2].url}
-               title={data[parseInt(i)+2].title}
+               url={data[parseInt(i)+2].scriptPicture}
+               title={data[parseInt(i)+2].scriptName}
                press={this.press.bind(this,  data[parseInt(i)+2])}></Item>
            </View>);
          list.push(row);
@@ -82,14 +71,14 @@ export default class List extends Component {
      }
  
      return (
-       <ScrollView style={{marginTop:10}}>
+       <ScrollView style={{marginTop:20}}>
          {list}
        </ScrollView>
      );
    }
  
    press(data) {
-     alert("您选择了："+data.title);
+     alert("您选择了："+data.scriptName);
    }
 }
  

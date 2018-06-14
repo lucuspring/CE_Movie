@@ -14,7 +14,19 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import TestComponent from './components/testComponent'
+<<<<<<< HEAD
+import TaskComponent from './components/TaskComponent'
+import TaskDetail from './components/TaskDetail';
+
+=======
 import List from './components/GridComponent'
+<<<<<<< HEAD
+import PersonComponent from './components/PersonPage'
+import Mine from './components/Mine'
+import Login from './components/Login'
+=======
+>>>>>>> 0f13e0f38462a966489a1dfeb7530f67a7c57d74
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -23,45 +35,8 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-// export default class App extends Component<Props> {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text style={styles.welcome}>
-//           Huangbaojin
-//           Welcome to React Native!
-//         </Text>
-//         <Text style={styles.instructions}>
-//           To get started, edit App.js
-//         </Text>
-//         <Text style={styles.instructions}>
-//           {instructions}
-//         </Text>
-//       </View>
-//     );
-//   }
-// }
+// type Props = {};
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#F5FCFF',
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: 'center',
-//     margin: 10,
-//   },
-//   instructions: {
-//     textAlign: 'center',
-//     color: '#333333',
-//     marginBottom: 5,
-//   },
-// });
-//   
 const styles=StyleSheet.create({  
     container:{  
         flex:1  
@@ -81,6 +56,7 @@ export default class App extends Component{
     
     componentWillUnmount(){  
         this.listener.remove();  
+
     } 
 
     render(){
@@ -101,15 +77,21 @@ export default class App extends Component{
   
                     <TabNavigator.Item  
                         selected={this.state.selectedTab==='trending'}  
-                        title="趋势"  
+                        title="任务"  
                         selectedTitleStyle={{color:'#63B8FF'}}  
                         renderIcon={()=><Image style={styles.icon} source={require('./res/images/ic_me.png')} />}  
                         renderSelectedIcon={() =>  
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'trending'})}  
+<<<<<<< HEAD
                         >
-                        <TestComponent/>   
+                       <PersonComponent/>   
+
                     </TabNavigator.Item>  
+=======
+                    >   
+                    </TabNavigator.Item>
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
   
                     <TabNavigator.Item  
                         selected={this.state.selectedTab==='favorite'}  
@@ -120,7 +102,10 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'favorite'})}  
                     >  
-                         <List/> 
+<<<<<<< HEAD
+                         <Login/> 
+=======
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
                     </TabNavigator.Item>  
   
                     <TabNavigator.Item  
@@ -132,7 +117,10 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'my'})}  
                     >  
-                       <TestComponent/> 
+<<<<<<< HEAD
+                       <Mine/> 
+=======
+>>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
                     </TabNavigator.Item>  
                 </TabNavigator>  
             </View>   
