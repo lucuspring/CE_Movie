@@ -14,23 +14,10 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator'
 import TestComponent from './components/testComponent'
-<<<<<<< HEAD
-import TaskComponent from './components/TaskComponent'
-import TaskDetail from './components/TaskDetail';
-
-=======
 import List from './components/GridComponent'
-<<<<<<< HEAD
-<<<<<<< HEAD
 import PersonComponent from './components/PersonPage'
 import Mine from './components/Mine'
 import Login from './components/Login'
-=======
->>>>>>> 0f13e0f38462a966489a1dfeb7530f67a7c57d74
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
-=======
->>>>>>> 0f13e0f38462a966489a1dfeb7530f67a7c57d74
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -87,21 +74,9 @@ export default class App extends Component{
                         renderSelectedIcon={() =>  
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'trending'})}  
-<<<<<<< HEAD
-<<<<<<< HEAD
                         >
-                       <PersonComponent/>   
-
                     </TabNavigator.Item>  
-=======
-                    >   
-                    </TabNavigator.Item>
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
-=======
-                    >   
-                    </TabNavigator.Item>
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
-  
+
                     <TabNavigator.Item  
                         selected={this.state.selectedTab==='favorite'}  
                         title="收藏"  
@@ -111,13 +86,7 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'favorite'})}  
                     >  
-<<<<<<< HEAD
-<<<<<<< HEAD
-                         <Login/> 
-=======
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
-=======
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
+
                     </TabNavigator.Item>  
   
                     <TabNavigator.Item  
@@ -129,13 +98,7 @@ export default class App extends Component{
                         <Image style={[styles.icon,{tintColor:'#63B8FF'}]} source={require('./res/images/ic_me.png')}/>}  
                         onPress={()=>this.setState({selectedTab:'my'})}  
                     >  
-<<<<<<< HEAD
-<<<<<<< HEAD
-                       <Mine/> 
-=======
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
-=======
->>>>>>> b80e8f29b2d6ee05e926178b439526ead234d049
+
                     </TabNavigator.Item>  
                 </TabNavigator>  
             </View>   
