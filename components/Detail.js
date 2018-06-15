@@ -5,7 +5,8 @@ import {
   Text,
   Image, 
   View,
-  ScrollView
+  ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import {get} from '../config/request';
 export default class Detail extends Component{  
@@ -13,6 +14,7 @@ export default class Detail extends Component{
         super(props);  
         this.state={
           scriptData:{},
+          storyData:[],
         }
     }  
     
@@ -25,9 +27,37 @@ export default class Detail extends Component{
                 })
             }
           });
+
+          get('/scripts/'+this.props.scriptId)
+          .then((jsonData)=>{
+              if (jsonData.meta && jsonData.meta.success) {
+                alert("111");
+                  this.setState({
+                    storyData:jsonData.data.stories 
+                  })
+              }
+            });
     } 
 
+    press(data){
+      this.props.navigator.push({
+        name:'SceneDetail',
+        params: { 
+          scriptId:data.scriptId,
+          scriptImg:data.scriptPicture,
+        }   
+      });
+    }
+
     render(){
+      const showList = this.state.storyData.length?
+      this.state.storyData.map((item,index)=>(
+        <View>
+        <TouchableOpacity onPress={this.press.bind(this,item)}>
+        <Text style={{fontSize:30}}>{item.storyName}</Text> 
+          </TouchableOpacity>
+        </View>
+      )):null;
 
       return (
         <View>
@@ -45,8 +75,13 @@ export default class Detail extends Component{
                <Text style={{paddingRight:5,marginLeft:5,fontSize:20}} >{this.state.scriptData.scriptIntro}</Text>
              </ScrollView>
         </Flex>
+
+        
         
         <Button style={{width:'100%',height:'7%'}}> 故事列表</Button>
+        <Flex style={{width:'80%',fontSize:20}}> 
+        {showList}
+        </Flex>
       </View>
       );
     } 
