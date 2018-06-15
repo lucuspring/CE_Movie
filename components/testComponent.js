@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { WhiteSpace, WingBlank,Card,Carousel,Grid } from 'antd-mobile-rn';
+import { WhiteSpace, WingBlank,Carousel } from 'antd-mobile-rn';
 import {
-  Platform,
   StyleSheet,
-  Text,
   View,
   Image,
   ScrollView
@@ -12,87 +10,36 @@ import {get} from '../config/request'
 import List from './GridComponent'
 
 
+let Images = [
+  { src: require('../res/images/3.jpg') },
+  { src: require('../res/images/2.jpg') }
+  
+];
+
 const PlaceHolder1 = (any) => (
-  <View style={{ marginTop: 30 }}>
+     <View style={{ marginTop: 30 }}>
         <View>
           <Carousel
             style={styles.wrapper}
             autoplayInterval={3000}
-            selectedIndex={2}
+            selectedIndex={0}
             autoplay
             infinite
             afterChange={this.onselectedIndexChange}
           >
             <View style={[styles.carContainer, { backgroundColor: 'red' }]}>
-              <Text>Carousel 1</Text>
+              <Image style={styles.imageStyle} source={Images[0].src}></Image>
             </View>
             <View style={[styles.carContainer, { backgroundColor: 'blue' }]}>
-              <Text>Carousel 2</Text>
+            <Image style={styles.imageStyle} source={Images[1].src}></Image>
             </View>
-            <View style={[styles.carContainer, { backgroundColor: 'yellow' }]}>
-              <Text>Carousel 3</Text>
-            </View>
-            <View style={[styles.carContainer, { backgroundColor: 'black' }]}>
-              <Text>Carousel 4</Text>
-            </View>
-            <View style={[styles.carContainer, { backgroundColor: '#ccc' }]}>
-              <Text>Carousel 5</Text>
-            </View>
-          </Carousel>
+             </Carousel>
 
         </View>
       </View>
 );
 
 
-
-// componentWillMount=()=>{
-//     let doit = this;
-//     get('/scripts/preference')
-//       .then((jsonData)=> {
-//         doit.setState({
-//           scriptData:myJson.data,
-//         })
-//       });
-//   }
-
-const data = Array.from(new Array(9)).map((_val, i) => ({
-  icon: 'http://206.189.170.143:8081/scriptImg/1e652f6f-2f64-24b1-9ed3-f63e6856b978.jpg',
-  text: "hhh",
-}));
-
-const GridDemo = (any)=>(
-    <ScrollView>
-        <Grid
-          data={data}
-          columnNum={3}
-          hasLine={false}
-          itemStyle={{ height: 200,width:200}}
-        />
-      </ScrollView>
-);
-
-
-const Content = (any) => (
-//const showCard = this.state.scriptData.length?;
-    <Card>
-	    <Card.Header
-	      title="黄宝金"
-	      thumbStyle={{ width: 30, height: 30 }}
-	      thumb="https://gw.alipayobjects.com/zos/rmsportal/MRhHctKOineMbKAZslML.jpg"
-	      extra="fdfa"
-	    />
-	    <Card.Body>
-	      <View style={{ height: 42 }}>
-	        <Text style={{ marginLeft: 16 }}>有句话不知当讲不当讲</Text>
-	      </View>
-	    </Card.Body>
-	    <Card.Footer
-	      content="点赞：56"
-	      extra="时间：2018-6-12"
-	    />
-	 </Card>
-);
 
 
 export default class TestComponent extends Component {
@@ -112,34 +59,20 @@ onselectedIndexChange(number) {
 
   render() {
   	
-  	const ShowPlaceHolder2 = this.state.scriptData.length?
-	<View
-    style={{
-      backgroundColor: 'gray',
-      height: 200,
-      alignItems: 'center',
-      justifyContent: 'center',
-    }}
-  >
-    
-  </View>:null;
 
     return (
       <View>
+        <ScrollView>
         <WhiteSpace size="lg" />
         <WingBlank size="md">
           <PlaceHolder1 />
         </WingBlank>
         <WhiteSpace size="lg" />
         <WingBlank size="md">
-        <ScrollView>
          <List navigator={this.props.navigator}/>
-         </ScrollView>
         </WingBlank>
         <WhiteSpace size="lg" />
-        <WingBlank size="md">
-          {ShowPlaceHolder2}
-        </WingBlank>
+        </ScrollView>
       </View>
     );
   }
@@ -171,5 +104,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 150,
   },
+  imageStyle: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 150,
+},
 });
   

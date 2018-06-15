@@ -14,12 +14,12 @@ import React, { Component } from 'react';
  } from 'react-native';
 
  import { Navigator } from 'react-native-deprecated-custom-components';
- import TestComponent from './components/testComponent';
  import Login from './components/Login';
  import Index from './components/Index';
  import Detail from './components/Detail';
  import TaskDetail from './components/TaskDetail';
  import SceneDetail from './components/SceneDetail';
+ import SceneList from './components/SceneList';
  
  export default class NV extends Component {
    //组件初始渲染执行完毕后调用
@@ -80,6 +80,8 @@ import React, { Component } from 'react';
          return <TaskDetail {...route.params} navigator={navigator} />
       case "SceneDetail":
          return <SceneDetail {...route.params} navigator={navigator} />
+      case "SceneList":
+         return <SceneList {...route.params} navigator={navigator} />
      }
  
    }

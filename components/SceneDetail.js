@@ -73,49 +73,48 @@ export default class SceneDetail extends Component{
     constructor(props){  
         super(props);  
         this.state={
-          scriptData:[]
+          data:this.props.scene.sceneDetails,
         }
+
     }  
-    
-    componentDidMount(){  
-          fetch('http://206.189.170.143:8081/scripts/preference')
-          .then((res)=>res.json())
-          .then((json)=>{
-            this.setState({
-              scriptData:json.data
-            })
-         
-          });
-        } 
-    
+
 
     render(){
-      var data =this.state.scriptData;
+      var data =this.state.data;
       var list = [];
+      character={
+          characterName:'',
+      };
+      for(var i in data){
+          if(data[i].character==null){
+              data[i].character=character;
+          }
+      }
+
       for(var i in data){
         
         var n =( 
           <Item key={i}
-                explain={data[i].scriptId}
-                role={data[i].scriptId}
-                lines={data[i].scriptName}
-                action={data[i].scriptName}/>
+                explain={data[i].dialogue}
+                role={data[i].character.characterName}
+                lines={data[i].speakAside}
+                action={data[i].action}/>
                
           );
            list.push(n);
       }
       return (
       <View>
+            <ScrollView>
            <Flex direction='column'>
                <WhiteSpace size='md'></WhiteSpace>
-               <Text style={{fontSize:25}}>场景1</Text>
+               <Text style={{fontSize:25}}>场景:{this.props.scene.title}</Text>
                <WhiteSpace size='md'></WhiteSpace>
-               <Text style={{fontSize:20}}>地点：升升公寓</Text>
+               <Text style={{fontSize:20}}>地点：{this.props.scene.place}</Text>
                <WhiteSpace size='md'></WhiteSpace>
-               <Text style={{fontSize:20}}>时间：2018-06-14</Text>
+               <Text style={{fontSize:20}}>时间：{this.props.scene.sceneTime}</Text>
                <WhiteSpace size='lg'></WhiteSpace>
-           </Flex>
-           <ScrollView>
+           </Flex>        
               {list}
            </ScrollView>
       </View>
